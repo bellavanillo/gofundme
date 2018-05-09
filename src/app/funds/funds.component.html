@@ -1,7 +1,12 @@
 <h2>Choose a fundraiser</h2>
 
-<div *ngFor="let fund of funds">
+<div *ngFor="let fund of funds | async">
   <h4 (click)="goToFund(fund)">{{fund.title}}</h4>
   <p>{{fund.image}}</p>
   <p>{{fund.description}}</p>
+  <div *ngIf="currentRoute === '/admin'">
+    {{fund.description}}
+    <hr>
+    <app-edit [selectedFund]="fund"></app-edit>
+  </div>
 </div>

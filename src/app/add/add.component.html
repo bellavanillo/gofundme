@@ -1,0 +1,35 @@
+<h3>Add your GoFundMe</h3>
+<div>
+  <label>Name:</label><br>
+  <input #newName>
+</div>
+<div>
+  <label>Location:</label><br>
+  <input #newLocation>
+</div>
+<div>
+  <label>Title:</label><br>
+  <input #newTitle>
+</div>
+<div>
+  <label>Image:</label><br>
+  <input #newImage>
+</div>
+<div>
+  <label>Description:</label><br>
+  <input #newDescription>
+</div>
+<div>
+  <label>Goal:</label><br>
+  <input #newGoal>
+</div>
+<div>
+  <label>Category:</label><br>
+  <select #newCategory>
+    <option [value]="education">Education</option>
+    <option [value]="sports">Sports</option>
+    <option [value]="animals">Animals</option>
+    <option [value]="creative">Creative</option>
+  </select>
+</div>
+<button (click)="submitForm(newName.value, newLocation.value, newTitle.value, newImage.value, newDescription.value, newGoal.value, newCategory.value); newName.value=''; newLocation.value=''; newTitle.value=''; newImage.value=''; newDescription.value=''; newGoal.value=''; newCategory.value=''">ADD</button>

@@ -1,21 +1,24 @@
 import { Injectable } from '@angular/core';
 import { Fund } from './fund.model';
-import { FUNDS } from './mock-funds';
+// import { FUNDS } from './mock-funds';
+import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
 
 @Injectable()
 export class FundService {
-
-  constructor() { }
-
-  getFunds() {
-    return FUNDS;
+  funds: FirebaseListObservable<any[]>;
+  constructor(private database: AngularFireDatabase) {
+    this.funds = database.list('funds');
   }
 
-  getFundById(fundId: number) {
-    for (let i=0; i<=FUNDS.length - 1; i++) {
-      if (FUNDS[i].id === fundId) {
-        return FUNDS[i];
-      }
-    }
+  getFunds() {
+    return this.funds;
+  }
+
+  addFund(newFund: Fund) {
+    this.funds.push(newFund);
+  }
+
+  getFundById(fundId: string) {
+    return this.database.object('funds/' + fundId);
   }
 }

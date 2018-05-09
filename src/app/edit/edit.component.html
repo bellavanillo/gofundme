@@ -1,0 +1,30 @@
+<h4>Edit Funds</h4>
+
+<label>New Fund Name:</label>
+<input [(ngModel)]="selectedFund.name">
+<br>
+
+<label>New Fund Location:</label>
+<input [(ngModel)]="selectedFund.location">
+<br>
+
+<label>New Fund Title:</label>
+<input [(ngModel)]="selectedFund.title">
+<br>
+
+<label>New Fund imageUrl:</label>
+<input [(ngModel)]="selectedFund.imageUrl">
+<br>
+
+<label>New Fund Description:</label>
+<input [(ngModel)]="selectedFund.description">
+<br>
+
+<label>New Fund Goal:</label>
+<input [(ngModel)]="selectedFund.goal">
+<br>
+
+<label>New Fund Category:</label>
+<input [(ngModel)]="selectedFund.category">
+
+<button (click)="beginUpdatingFund(selectedFund)">Update</button>
