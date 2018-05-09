@@ -1,0 +1,7 @@
+<h2>Choose a fundraiser</h2>
+
+<div *ngFor="let fund of funds">
+  <h4 (click)="goToFund(fund)">{{fund.title}}</h4>
+  <p>{{fund.image}}</p>
+  <p>{{fund.description}}</p>
+</div>
